@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalSystemsHyperbolicOrbitsSetsTheoremCanonicalLaneLean.HyperbolicBasicSet
+import HautevilleHouse.DynamicalSystemsHyperbolicOrbitsSetsTheoremCanonicalLaneLean.ShadowingLemma
+import HautevilleHouse.DynamicalSystemsHyperbolicOrbitsSetsTheoremCanonicalLaneLean.StableManifoldTheorem
+
+namespace HautevilleHouse
+namespace DynamicalSystemsHyperbolicOrbitsSetsTheoremCanonicalLaneLean
+
+def ConstrainedHyperbolicOrbitsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_hyperbolic_orbits_endgame (A : AdmissibleClass) : ConstrainedHyperbolicOrbitsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsHyperbolicOrbitsSetsTheoremCanonicalLaneLean
+end HautevilleHouse
